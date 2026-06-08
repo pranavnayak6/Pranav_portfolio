@@ -11,7 +11,7 @@ const projects = [
     title: 'Fashion Nest',
     description:
       'Analyzed fashion retail datasets to forecast sales trends with regression models and deliver business optimization insights using Python and ML.',
-    year: '2024–2025',
+    year: '2024–25',
   },
   {
     title: 'Bank Management System',
@@ -22,32 +22,41 @@ const projects = [
 ]
 
 const skills = [
-  'C',
-  'C++',
-  'Java',
-  'Python',
-  'HTML',
-  'CSS',
-  'JavaScript',
-  'React.js',
-  'Node.js',
-  'Express.js',
-  'MongoDB',
-  'MySQL',
-  'PostgreSQL',
-  'Git',
-  'VS Code',
-  'Postman',
+  'C', 'C++', 'Java', 'Python', 'HTML', 'CSS', 'JavaScript',
+  'React.js', 'Node.js', 'Express.js', 'MongoDB', 'MySQL',
+  'PostgreSQL', 'Git', 'VS Code', 'Postman',
+]
+
+const experience = [
+  {
+    company: 'Thaniya Technologies',
+    meta: 'Mangalore, India · Full Stack Intern',
+    points: [
+      'Developed responsive web applications with frontend interfaces and efficient backend logic.',
+      'Built core platform features including user authentication, database modules, and UI components.',
+      'Optimised API communication for reliable performance and seamless data flow.',
+    ],
+  },
+  {
+    company: 'Admar',
+    meta: 'Karkala, India · Internship',
+    points: ['Worked on practical software tasks and supported development activities across web projects.'],
+  },
+  {
+    company: 'Local Project Internship',
+    meta: 'Udupi, India',
+    points: ['Gained early exposure to development workflows, collaboration, and project delivery.'],
+  },
 ]
 
 function App() {
   return (
     <div className="page-shell">
+
       <header className="topbar">
         <div>
-          <p className="eyebrow">Portfolio</p>
+          <span className="eyebrow">Portfolio</span>
           <h1>Pranav Purushotham Nayak</h1>
-          <p className="subtitle">Information Science Engineering student building modern web experiences.</p>
         </div>
         <nav className="nav-links" aria-label="Primary navigation">
           <a href="#about">About</a>
@@ -59,87 +68,87 @@ function App() {
       </header>
 
       <main>
+
+        {/* Hero */}
         <section className="hero-section" id="hero">
           <div className="hero-copy">
             <p className="eyebrow">Full Stack Developer</p>
-            <h2>Building responsive web applications with clean UX and scalable backend systems.</h2>
+            <h2>
+              Building responsive web apps with{' '}
+              <em>clean UX</em> &amp; scalable backends.
+            </h2>
             <p>
-              I am a dedicated Information Science and Engineering student from NMAMIT, focused on delivering
-              practical software solutions through modern web technologies and strong engineering fundamentals.
+              Information Science and Engineering student from NMAMIT, Nitte.
+              I craft practical software through modern web technologies and
+              strong engineering fundamentals.
             </p>
             <div className="hero-actions">
-              <a className="button primary" href="#projects">
-                View Projects
-              </a>
-              <a className="button secondary" href="#contact">
-                Contact Me
-              </a>
+              <a className="button primary" href="#projects">View Projects</a>
+              <a className="button secondary" href="#contact">Contact Me</a>
             </div>
           </div>
+
           <div className="hero-panel">
             <div className="panel-card">
               <span>Education</span>
-              <p>NMAM Institute of Technology</p>
-              <strong>B.E. in Information Science and Engineering</strong>
-              <p>CGPA: 8.58</p>
+              <strong>NMAM Institute of Technology</strong>
+              <p>B.E. in Information Science &amp; Engineering</p>
+              <div className="cgpa">CGPA 8.58</div>
             </div>
             <div className="panel-card">
-              <span>Internship Experience</span>
-              <p>Thaniya Technologies — Full Stack Intern</p>
-              <p>Mangalore, India | Oct 2025–Dec 2025</p>
+              <span>Internship</span>
+              <strong>Thaniya Technologies</strong>
+              <p>Full Stack Intern · Mangalore</p>
+              <p style={{ marginTop: 6, fontSize: '0.8rem' }}>Oct 2025 – Dec 2025</p>
             </div>
           </div>
         </section>
 
+        {/* About */}
         <section className="section-grid" id="about">
           <div className="section-card">
             <h3>About Me</h3>
             <p>
-              Passionate about frontend and backend development, I enjoy creating clean interfaces, efficient APIs,
-              and data-driven applications. I bring strong problem-solving skills and practical experience
-              from internships and academic projects.
+              Passionate about frontend and backend development, I enjoy creating
+              clean interfaces, efficient APIs, and data-driven applications. I bring
+              strong problem-solving skills and practical experience from internships
+              and academic projects.
             </p>
           </div>
           <div className="section-card">
             <h3>Education</h3>
             <ul>
-              <li>NMAM Institute of Technology — B.E. Information Science and Engineering</li>
+              <li>NMAM Institute of Technology — B.E. Information Science &amp; Engineering</li>
               <li>Poorna Prajna Pre-University College — Science (PCM + CS)</li>
               <li>Saint Francis English Medium School — State Board</li>
             </ul>
           </div>
         </section>
 
+        {/* Experience */}
         <section className="section-block" id="experience">
+          <p className="section-label">Work</p>
           <h2>Internship Experience</h2>
           <div className="experience-list">
-            <article>
-              <h3>Thaniya Technologies</h3>
-              <p className="meta">Mangalore, India — Full Stack Intern</p>
-              <ul>
-                <li>Developed responsive web applications with frontend interfaces and efficient backend logic.</li>
-                <li>Built core platform features including user authentication, database modules, and components.</li>
-                <li>Optimized API communication for reliable performance and seamless data flow.</li>
-              </ul>
-            </article>
-            <article>
-              <h3>Admar</h3>
-              <p className="meta">Karkala, India — Internship</p>
-              <ul>
-                <li>Worked on practical software tasks and supported development activities across web projects.</li>
-              </ul>
-            </article>
-            <article>
-              <h3>Local Project Internship</h3>
-              <p className="meta">Udupi, India</p>
-              <ul>
-                <li>Gained early exposure to development workflows, collaboration, and project delivery.</li>
-              </ul>
-            </article>
+            {experience.map((exp) => (
+              <article key={exp.company}>
+                <div className="exp-meta">
+                  <h3>{exp.company}</h3>
+                  <p className="meta">{exp.meta}</p>
+                </div>
+                <div className="exp-body">
+                  <ul>
+                    {exp.points.map((pt, i) => <li key={i}>{pt}</li>)}
+                  </ul>
+                </div>
+              </article>
+            ))}
           </div>
         </section>
 
+        {/* Projects */}
         <section className="section-block" id="projects">
+          <p className="section-label">Work</p>
           <h2>Projects</h2>
           <div className="project-grid">
             {projects.map((project) => (
@@ -152,7 +161,9 @@ function App() {
           </div>
         </section>
 
+        {/* Skills */}
         <section className="section-block" id="skills">
+          <p className="section-label">Stack</p>
           <h2>Technical Skills</h2>
           <div className="skill-tags">
             {skills.map((skill) => (
@@ -161,37 +172,43 @@ function App() {
           </div>
         </section>
 
+        {/* Certifications */}
         <section className="section-block" id="certifications">
+          <p className="section-label">Credentials</p>
           <h2>Certifications</h2>
           <ul className="cert-list">
-            <li>Learn JAVA Data Structures and Algorithms (Udemy)</li>
+            <li>Learn JAVA Data Structures and Algorithms — Udemy</li>
             <li>Google Cloud Computing Foundations &amp; Generative AI</li>
             <li>Microsoft Certified: AI Fundamentals (AI-900)</li>
           </ul>
         </section>
 
-        <section className="section-block contact-block" id="contact">
-          <h2>Contact</h2>
-          <p>Based in Udupi, India. Ready to collaborate on web development and software engineering projects.</p>
-          <div className="contact-grid">
-            <div>
-              <strong>Phone</strong>
-              <p>+91 9164208227</p>
-            </div>
-            <div>
-              <strong>Email</strong>
-              <p>Gmail address available on request</p>
-            </div>
-            <div>
-              <strong>LinkedIn</strong>
-              <p><a href="#" aria-label="LinkedIn profile">LinkedIn profile</a></p>
-            </div>
-            <div>
-              <strong>GitHub</strong>
-              <p><a href="#" aria-label="GitHub profile">GitHub profile</a></p>
+        {/* Contact */}
+        <section className="section-block" id="contact">
+          <div className="contact-block">
+            <h2>Let's work together.</h2>
+            <p>Based in Udupi, India. Open to web development and software engineering projects.</p>
+            <div className="contact-grid">
+              <div>
+                <strong>Phone</strong>
+                <p>+91 9164208227</p>
+              </div>
+              <div>
+                <strong>Email</strong>
+                <p>Available on request</p>
+              </div>
+              <div>
+                <strong>LinkedIn</strong>
+                <a href="#" aria-label="LinkedIn profile">linkedin.com/in/pranav</a>
+              </div>
+              <div>
+                <strong>GitHub</strong>
+                <a href="#" aria-label="GitHub profile">github.com/pranav</a>
+              </div>
             </div>
           </div>
         </section>
+
       </main>
     </div>
   )
